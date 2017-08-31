@@ -4,7 +4,7 @@ function! open_url#open(url)
   elseif has('mac') || has('macunix') || has('gui_macvim')
     exe 'silent !open "'.a:url.'"'
   else
-    exe 'silent !sensible-browser "'.a:url.'"'
+    exe 'silent !'.g:open_url_browser_default a:url
   endif
   redraw!
 endfunction
