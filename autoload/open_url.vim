@@ -1,3 +1,18 @@
+function! open_url#getvisual() range
+  " Save the current register and clipboard
+  let reg_save = getreg('"')
+  let regtype_save = getregtype('"')
+  let cb_save = &clipboard
+  set clipboard&
+  " Put the current visual selection in the " register
+  normal! ""gvy
+  let selection = getreg('"')
+  " Put the saved registers and clipboards back
+  call setreg('"', reg_save, regtype_save)
+  let &clipboard = cb_save
+  return selection
+endfunction
+
 function! open_url#open(url)
   if has('win16') || has('win32') || has('win64')
     exe '!start cmd /cstart /b '.a:url.''
