@@ -14,3 +14,7 @@ function! open_url#open_in(app, file)
     exec 'silent !open -a "'.a:app.'"' a:file
   endif
 endfunction
+
+function! open_url#get_selection()
+  return getline('.')[col("'<")-1:col("'>")-1]
+endfunction
