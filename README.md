@@ -9,7 +9,7 @@ default web browser.
 
 ### VIM Command :
 
-* `:OpenUrl <url>` to open given url in the default web browser
+* `:OpenURL <url>` to open given url in the default web browser
 
 ### VIM Mappings :
 
