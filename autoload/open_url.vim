@@ -1,10 +1,12 @@
 function! open_url#open(url)
+  let url = fnameescape(a:url)
+  echom url
   if has('win16') || has('win32') || has('win64')
-    exe '!start cmd /cstart /b '.a:url.''
+    exe '!start cmd /cstart /b '.url.''
   elseif has('mac') || has('macunix') || has('gui_macvim')
-    exe 'silent !open "'.a:url.'"'
+    exe 'silent !open "'.url.'"'
   else
-    exe 'silent !'.g:open_url_browser_default a:url
+    exe 'silent !'.g:open_url_browser_default url
   endif
   redraw!
 endfunction
