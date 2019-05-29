@@ -1,5 +1,5 @@
 function! open_url#open(url)
-  let url = fnameescape(a:url)
+  let url = escape(a:url, "%|*#")
   if has('win16') || has('win32') || has('win64')
     exe '!start cmd /cstart /b '.url.''
   elseif has('mac') || has('macunix') || has('gui_macvim')
