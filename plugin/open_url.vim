@@ -9,7 +9,7 @@ function! s:SetGlobalOpt(opt, val)
   endif
 endfunction
 
-call s:SetGlobalOpt('open_url_browser_default', 'sensible-browser')
+call s:SetGlobalOpt('open_url_browser_default', 'xdg-open')
 
 command! -nargs=1 OpenURL call open_url#open(<q-args>)
 command! -nargs=+ -complete=file OpenIn call open_url#open_in(<f-args>)
