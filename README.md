@@ -26,6 +26,11 @@ different mappings to those provided by default.
 * `<Plug>(open-url-wiki-search)`
 * `<Plug>(open-url-google-search)`
 
+### VIM Variables :
+* `g:open_url_browser_default` changes default browser (Default: `xdg-open`)
+* `g:open_url_default_mappings` enable/disable default mappings without
+remapping `<Plug>` mappings (Default: `1`)
+
 ### VIM autoload function :
 
 * `open_url#open(a:url)`: Open given url in the default web browser
