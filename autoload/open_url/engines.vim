@@ -4,6 +4,7 @@ let s:engines = {
       \ 'google': 'https://www.google.com/search?q=%s',
       \ 'duckduckgo': 'https://duckduckgo.com/?q=%s',
       \ 'wikipedia': 'https://en.wikipedia.org/wiki/Special:Search?search=%s',
+      \ 'so': 'https://stackoverflow.com/search?q=%s',
       \}
 
 function! s:SearchURL(engine, term) abort

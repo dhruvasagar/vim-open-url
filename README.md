@@ -1,4 +1,4 @@
-# VIM Open Url v0.5
+# VIM Open Url v0.5.1
 
 A VIM plugin to open urls in the default browser
 
@@ -13,12 +13,14 @@ default web browser.
 * `:OpenIn <browser> <url>` to open given url in the specified web browser
 * `:OpenSearchURL <engine> <url>` to open given url using registered search
   engine.
-  > The default search engine is `duckduckgo`, however `google` and
-  > `wikipedia` are also available. You can change the default by changing
-  > `g:open_url#engines#default`. Search engines can be added using the API
-  > `open_url#engines#add(name, pattern)` where name is a logical name and
-  > pattern is a string that represents the search url pattern, use `%s` as
-  > a placeholder for where the search term is added.
+  > The default search engine is `duckduckgo`
+  > However, `google`, `stackoverflow` and `wikipedia` are also available. You
+  > can change the default by setting `g:open_url#engines#default`.
+  >
+  > Search engines can be added using the API `open_url#engines#add(name, pattern)`
+  > where name is a logical name and pattern is a string that represents the
+  > search url pattern, use `%s` as a placeholder for where the search term is
+  > added.
 
 ### VIM Mappings :
 
@@ -34,6 +36,7 @@ different mappings to those provided by default.
 
 * `<Plug>(open-url-browser)`
 * `<Plug>(open-url-search)`
+* `<Plug>(open-url-search-so)`
 * `<Plug>(open-url-search-google)`
 * `<Plug>(open-url-search-wikipedia)`
 

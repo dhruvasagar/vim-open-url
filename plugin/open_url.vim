@@ -23,6 +23,9 @@ xnoremap <Plug>(open-url-browser) :<C-U>OpenURL <C-R>=open_url#get_selection()<C
 
 nnoremap <Plug>(open-url-search) :OpenSearchURL <cword><CR>
 xnoremap <Plug>(open-url-search) :<C-U>OpenSearchURL <C-R>=open_url#get_selection()<CR><CR>
+
+nnoremap <Plug>(open-url-search-so) :OpenSearchURL so <cword><CR>
+xnoremap <Plug>(open-url-search-so) :<C-U>OpenSearchURL so <C-R>=open_url#get_selection()<CR><CR>
 nnoremap <Plug>(open-url-search-google) :OpenSearchURL google <cword><CR>
 xnoremap <Plug>(open-url-search-google) :<C-U>OpenSearchURL google <C-R>=open_url#get_selection()<CR><CR>
 nnoremap <Plug>(open-url-search-wikipedia) :OpenSearchURL wikipedia <cword><CR>
