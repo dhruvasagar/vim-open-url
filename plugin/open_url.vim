@@ -39,10 +39,10 @@ if g:open_url_default_mappings
     xmap gB <Plug>(open-url-browser)
   endif
   if !hasmapto('<Plug>(open-url-search)', 'n')
-    nmap gS <Plug>(open-url-search)
+    nmap g<CR> <Plug>(open-url-search)
   endif
   if !hasmapto('<Plug>(open-url-search)', 'x')
-    xmap gS <Plug>(open-url-search)
+    xmap g<CR> <Plug>(open-url-search)
   endif
   if !hasmapto('<Plug>(open-url-search-wikipedia)', 'n')
     nmap gW <Plug>(open-url-search-wikipedia)

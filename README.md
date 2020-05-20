@@ -1,4 +1,4 @@
-# VIM Open Url v0.5.1
+# VIM Open Url v0.5.2
 
 A VIM plugin to open urls in the default browser
 
@@ -27,7 +27,7 @@ default web browser.
 These work in both normal mode and visual mode :
 
 * <kbd>gB</kbd>: Open url under cursor in the default web browser.
-* <kbd>gS</kbd>: Search word under cursor using default search engine
+* <kbd>g&lt;CR&gt;</kbd>: Search word under cursor using default search engine
 * <kbd>gG</kbd>: Google search word under cursor in the default web browser
 * <kbd>gW</kbd>: Wikipedia search word under cursor in the default web browser
 
