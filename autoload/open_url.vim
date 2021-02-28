@@ -12,7 +12,7 @@ endfunction
 
 function! open_url#open_in(app, file)
   if has('mac') || has('macunix') || has('gui_macvim')
-    exec 'silent !open -a "'.a:app.'"' a:file
+    exec 'silent !open -a "'.a:app.'"' escape(a:file, '%|*#')
   endif
 endfunction
 
