@@ -1,0 +1,132 @@
+*open-url.txt*                         Open urls in the default web browser
+===============================================================================
+
+     Open URL, cross platform API to open a url in your default web browser
+                                 Version 0.5.2
+
+
+                 Author: Dhruva Sagar <http://dhruvasagar/dev/>
+               License: MIT <http://opensource.org/licenses/MIT/>
+
+===============================================================================
+CONTENTS                                                     *open-url-contents*
+
+    1. Introduction ................................ |open-url-introduction|
+    2. Options ..................................... |open-url-options|
+    3. Mappings .................................... |open-url-mappings|
+    4. Commands .................................... |open-url-commands|
+    5. API ......................................... |open-url-api|
+    6. Contributing ................................ |open-url-contributing|
+    7. Report Issues ............................... |open-url-report-issues|
+
+===============================================================================
+INTRODUCTION                                             *open-url-introduction*
+
+    Open URL is a simple vim plugin that aims to provide a cross platform API to
+    open a url in your default web browser
+
+===============================================================================
+OPTIONS                                                       *open-url-options*
+
+    g:open_url_browser_default                        *open_url_browser_default*
+        Sets the external utility to open the default browser on linux.
+        Defaults to `xdg-open` on linux
+
+    g:open_url_default_mappings                      *open_url_default_mappings*
+        Enables / disables default mappings.
+        Defaults to `1`, i.e. it is enabled.
+
+    g:open_url#engines#default                        *open_url#engines#default*
+        Sets the default search engine.
+        Defaults to `duckduckgo`. Should be one of the registered search
+        engines: `google`, `so`, `duckduckgo`, `wikipedia`.
+
+===============================================================================
+Mappings                                                     *open-url-mappings*
+
+    `gB`                                                           *open-url-gB*
+        Open url under cursor in the default web browser
+
+    `g<CR>`                                                     *open-url-g<CR>*
+        Search word under cusor using the default search
+
+    `gG`                                                           *open-url-gG*
+        Google search word under cursor in the default web browser
+
+    `gW`                                                           *open-url-gW*
+        Wikipedia search word uinder cursor in the default web browser
+
+    The following are the plug mappings provided which can be remapped if you
+    wish to use different mappings than the ones provided by default above
+
+    `<Plug>(open-url-browser)`
+    `<Plug>(open-url-search)`
+    `<Plug>(open-url-search-so)`        " Unmapped by default
+    `<Plug>(open-url-search-google)`
+    `<Plug>(open-url-search-wikipedia)`
+
+===============================================================================
+COMMANDS                                                     *open-url-commands*
+
+                                                  *:OpenURL* *open-url-:OpenURL*
+    :OpenURL <url>
+        Opens the given <url> in the default web browser
+
+                                                    *:OpenIn* *open-url-:OpenIn*
+    :OpenIn <browser> <url>
+        Opens the given <url> in the specified <browser>
+
+                                      *:OpenSearchUrl* *open-url-:OpenSearchUrl*
+    :OpenSearchUrl <engine> <search terms>
+        Opens the search url for the registered search <engine> for searching
+        the <search terms>
+
+        The default search engine is `duckduckgo`. However, `google`,
+        `stackoverflow` and `wikipedia` are also available. You can change the
+        default by setting `g:open_url#engines#default`
+
+        Search engines can be added using the following API:
+        `open_url#engines#add(name, pattern)`
+        The name is a unique keyword representing the search engine and pattern
+        is a string that represents the search url pattern, use `%s` as
+        a placeholder for where the search term is added.
+
+===============================================================================
+API                                                               *open-url-api*
+
+    This plugin provides an API for plugin authors to use. Following is a list
+    of available functions :
+
+                                                                 *open_url#open*
+    `open_url#open(url)`
+        Opens the given url in the default web browser
+
+                                                              *open_url#open_in*
+    `open_url#open_in(app, url)`
+        Opens the given url in the specified application
+        NOTE: currently only supported on mac osx
+
+                                                          *open_url#engines#add*
+    `open_url#engines#add(name, pattern)`
+        Add a search engine to the list of existing search engines. The name
+        must be a unique keyword to represent the search engine and the pattern
+        should be a string representing the search url pattern. Use `%s` as
+        a placeholder within the pattern for where the search term is added.
+
+                                                       *open_url#engines#search*
+    `open_url#engines#search(engine, term)`
+        Search for given `term` using the search engine named `engine`
+
+===============================================================================
+CONTRIBUTING                                             *open-url-contributing*
+
+    If you want to contribute to open_url, use github to submit your pull
+    request on https://github.com/dhruvasagar/vim-open-url
+
+===============================================================================
+REPORT ISSUES                                           *open-url-report-issues*
+
+    If you face any issues or would like to suggest any improvements, kindly
+    report them on github at https://github.com/dhruvasagar/vim-open-url/issues
+
+===============================================================================

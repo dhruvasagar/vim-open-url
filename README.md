@@ -11,8 +11,8 @@ default web browser.
 
 * `:OpenURL <url>` to open given url in the default web browser
 * `:OpenIn <browser> <url>` to open given url in the specified web browser
-* `:OpenSearchURL <engine> <url>` to open given url using registered search
-  engine.
+* `:OpenSearchURL <engine> <search terms>` to search the `search terms` using
+  registered search engine.
   > The default search engine is `duckduckgo`
   > However, `google`, `stackoverflow` and `wikipedia` are also available. You
   > can change the default by setting `g:open_url#engines#default`.
@@ -48,9 +48,9 @@ remapping `<Plug>` mappings (Default: `1`)
 ### VIM autoload function :
 
 * `open_url#open(url)`: Open given url in the default web browser
-* `open_url#open_in(app, file)`: Open url in specified application (only
+* `open_url#open_in(app, url)`: Open url in specified application (only
   supported on mac osx).
-* `open_url#engines#add(name, patter)`: Add a search engine to the list of
+* `open_url#engines#add(name, pattern)`: Add a search engine to the list of
   existing search engines
 * `open_url#engines#search(engine, term)`: Search for given `term` using
   search engine named `engine`
