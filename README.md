@@ -1,4 +1,4 @@
-# VIM Open Url v0.5.2
+# VIM Open Url v0.5.3
 
 A VIM plugin to open urls in the default browser
 
@@ -21,6 +21,9 @@ default web browser.
   > where name is a logical name and pattern is a string that represents the
   > search url pattern, use `%s` as a placeholder for where the search term is
   > added.
+* `:OpenURLFind` to find a url ahead of the cursor on the same line and open
+  it if found.
+  NOTE: This also moves the cursor to the url when found.
 
 ### VIM Mappings :
 
@@ -54,6 +57,9 @@ remapping `<Plug>` mappings (Default: `1`)
   existing search engines
 * `open_url#engines#search(engine, term)`: Search for given `term` using
   search engine named `engine`
+* `open_url#find_url()`: Find and return a url (content beginning with
+  http(s)) on the same line. Returns 0 if nothing found.
+  NOTE: This also moves the cursor to the url when found.
 
 ## License
 

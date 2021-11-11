@@ -31,6 +31,16 @@ xnoremap <Plug>(open-url-search-google) :<C-U>OpenSearchURL google <C-R>=open_ur
 nnoremap <Plug>(open-url-search-wikipedia) :OpenSearchURL wikipedia <cword><CR>
 xnoremap <Plug>(open-url-search-wikipedia) :<C-U>OpenSearchURL wikipedia <C-R>=open_url#get_selection()<CR><CR>
 
+function! s:FindAndOpen() abort
+  let url = open_url#find_url()
+  if !empty(url)
+    call open_url#open(url)
+  else
+    echo 'No URL Found'
+  endif
+endfunction
+command! OpenURLFind call s:FindAndOpen()
+
 if g:open_url_default_mappings
   if !hasmapto('<Plug>(open-url-browser)', 'n')
     nmap gB <Plug>(open-url-browser)

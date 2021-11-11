@@ -2,7 +2,7 @@
 ===============================================================================
 
      Open URL, cross platform API to open a url in your default web browser
-                                 Version 0.5.2
+                                 Version 0.5.3
 
 
                  Author: Dhruva Sagar <http://dhruvasagar/dev/>
@@ -91,6 +91,12 @@ COMMANDS                                                     *open-url-commands*
         is a string that represents the search url pattern, use `%s` as
         a placeholder for where the search term is added.
 
+                                          *:OpenURLFind* *open-url-:OpenURLFind*
+    :OpenURLFind
+        Finds a url ahead of the cursor on the same line and opens it in the
+        default web browser if found.
+        NOTE: This also moves the cursor to the url when found
+
 ===============================================================================
 API                                                               *open-url-api*
 
@@ -116,6 +122,13 @@ API                                                               *open-url-api*
                                                        *open_url#engines#search*
     `open_url#engines#search(engine, term)`
         Search for given `term` using the search engine named `engine`
+
+
+                                                             *open_url#find_url*
+    `open_url#find_url()`
+        Find and return the url on the same line ahead of the cursor.
+        Returns 0 if nothing found.
+        NOTE: This also moves the cursor to the url when found
 
 ===============================================================================
 CONTRIBUTING                                             *open-url-contributing*

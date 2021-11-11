@@ -19,3 +19,8 @@ endfunction
 function! open_url#get_selection()
   return getline('.')[col("'<")-1:col("'>")-1]
 endfunction
+
+function! open_url#find_url() abort
+  let found = search('http\(s\)\?', '', line('.'))
+  if found > 0 | return expand('<cfile>') | endif
+endfunction
