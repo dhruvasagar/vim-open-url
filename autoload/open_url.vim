@@ -21,6 +21,10 @@ function! open_url#get_selection()
 endfunction
 
 function! open_url#find_url() abort
-  let found = search('http\(s\)\?', '', line('.'))
+  let pat = 'http\(s\)\?'
+  let url = expand('<cfile>')
+  if url =~# pat | return url | endif
+
+  let found = search(pat, '', line('.'))
   if found > 0 | return expand('<cfile>') | endif
 endfunction

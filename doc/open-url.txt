@@ -2,7 +2,7 @@
 ===============================================================================
 
      Open URL, cross platform API to open a url in your default web browser
-                                 Version 0.5.3
+                                 Version 0.5.4
 
 
                  Author: Dhruva Sagar <http://dhruvasagar/dev/>

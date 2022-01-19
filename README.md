@@ -1,4 +1,4 @@
-# VIM Open Url v0.5.3
+# VIM Open Url v0.5.4
 
 A VIM plugin to open urls in the default browser
 
